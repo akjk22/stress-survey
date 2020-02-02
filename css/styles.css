@@ -1,0 +1,11 @@
+.header-div {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+}
+
+#results1, #results2, #results3 {
+    display: none;
+}
