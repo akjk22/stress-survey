@@ -1,9 +1,7 @@
 $(document).ready(function() {
    $("#stress-form").submit(function(event) {
-    $("#results1").show();
-    $("#results2").show();
-    $("#results3").show();
-
+    event.preventDefault();
+   
     let physicalResults = [];
     $("input:checkbox[name=physical]:checked").each(function() {
         let physicalValue = $(this).val();
@@ -27,12 +25,21 @@ $(document).ready(function() {
     let emotionalTotal = emotionalResults.length;
     let copingTotal = copingResults.length;
 
-    
+    if ((physicalTotal === 0) && (emotionalTotal === 0) && (copingTotal ===0)) {
+        alert("Please check some symptoms or coping skills");
+        
+    } else {
+
+
+    $("#results1").show();
+    $("#results-paragraph").append(`You have ${physicalTotal} physical stress symptoms, ${emotionalTotal} emotional stress symptoms, and ${copingTotal} coping skills. You're doing great! Check out some additional healthy coping tips below:`);
+
+
     
     // console.log(physicalTotal);
     // console.log(emotionalTotal);
     // console.log(copingTotal);
-
-    event.preventDefault();
+    }
+   
    }); 
 });

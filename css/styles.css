@@ -9,3 +9,11 @@ h4 {
 #results1, #results2, #results3 {
     display: none;
 }
+
+#results1 {
+    padding-top: 3em;
+}
+
+button {
+    margin-top: 1em;
+}
